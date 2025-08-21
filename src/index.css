@@ -3,3 +3,7 @@
 .container {
   @apply mx-auto px-4;
 }
+
+.links {
+  @apply hover:bg-[#707070] px-4 py-2 rounded-lg transition-all duration-300 cursor-pointer;
+}
