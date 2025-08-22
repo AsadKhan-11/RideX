@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
+import { CgClose } from "react-icons/cg";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -25,33 +29,77 @@ const Navbar = () => {
         <div className=" text-3xl font-bold">
           <h1> RideX</h1>
         </div>
-        <ul className="flex space-x-10 text-lg">
-          <li className="links">
-            <a href="#home">Home</a>
-          </li>
-          <li className="links">
-            <a href="#about">About</a>
-          </li>
-          <li className="links">
-            <a href="#pricing">Pricing</a>
-          </li>
-          <li className="links">
-            <a href="#testimonials">Testimonials</a>
-          </li>
-          <li className="links">
-            <a href="#contact" className="">
-              Contact
-            </a>
-          </li>
-        </ul>
-        <div className="space-x-5 text-lg">
-          <button className="bg-[#707070] px-4 py-2 rounded-lg transition-all duration-300 cursor-pointer hover:bg-[#5e5e5ecc] hover:text-white">
+        <div className="hidden lg:flex items-center space-x-25">
+          <ul className="flex space-x-10 text-lg">
+            <li className="links">
+              <a href="#home">Home</a>
+            </li>
+            <li className="links">
+              <a href="#about">About</a>
+            </li>
+            <li className="links">
+              <a href="#pricing">Pricing</a>
+            </li>
+            <li className="links">
+              <a href="#testimonials">Testimonials</a>
+            </li>
+            <li className="links">
+              <a href="#contact" className="">
+                Contact
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div className="font-semibold hidden lg:block space-x-5 text-lg">
+          <button className="bg-[#121212]  border-2 border-white px-4 py-2 rounded-lg transition-all duration-300 cursor-pointer hover:bg-[#5e5e5e65] ">
             Login
           </button>
-          <button className="text-black px-4 py-2 rounded-lg bg-white  transition-all duration-300 cursor-pointer hover:bg-[#cccccccc] hover:text-white  ">
+          <button className="text-white border-2 border-white px-4 py-2 rounded-lg   transition-all duration-300 cursor-pointer hover:bg-white hover:text-black   ">
             Signup
           </button>
         </div>
+
+        {/* Mobile view */}
+        <div className="lg:hidden flex items-center">
+          <button
+            className="text-white focus:outline-none"
+            onClick={() => setIsOpen(true)}
+          >
+            <GiHamburgerMenu className="text-2xl" />
+          </button>
+        </div>
+
+        {/* Mobile Menu */}
+        {isOpen && (
+          <div className="z-50 absolute top-0 left-0 w-full h-screen font-semibold flex space-y-6 flex-col items-center justify-center  bg-black/90 text-white p-8 pb-14 transition-all duration-200">
+            <button
+              onClick={() => setIsOpen(false)}
+              className="absolute top-6 right-6 text-3xl cursor-pointer transition-colors duration-300"
+            >
+              <CgClose />
+            </button>
+            <ul className="flex flex-col items-center space-y-6 text-xl  mt-16">
+              <li className=" transition-all duration-300 cursor-pointer  text-center">
+                <a href="#home"> Home </a>
+              </li>
+              <li className=" transition-all duration-300 cursor-pointer  text-center">
+                <a href="#about"> About Us </a>
+              </li>
+              <li className=" transition-all duration-300 cursor-pointer  text-center">
+                <a href="#pricing"> Pricing </a>
+              </li>
+              <li className="transition-all duration-300 cursor-pointer  text-center">
+                <a href="#testimonials"> Testimonials</a>
+              </li>
+            </ul>{" "}
+            <button className="bg-[#121212]  border-2 border-white px-4 py-2 rounded-lg transition-all duration-300 cursor-pointer hover:bg-[#5e5e5e65] ">
+              Login
+            </button>
+            <button className="text-white border-2 border-white px-4 py-2 rounded-lg   transition-all duration-300 cursor-pointer hover:bg-white hover:text-black   ">
+              Signup
+            </button>
+          </div>
+        )}
       </nav>
     </div>
   );

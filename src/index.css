@@ -5,5 +5,15 @@
 }
 
 .links {
-  @apply hover:bg-[#707070] px-4 py-2 rounded-lg transition-all duration-300 cursor-pointer;
+  @apply hover:border-white border-2 border-transparent px-4 py-2 rounded-lg transition-all duration-300 cursor-pointer;
+}
+
+.font-oswald {
+  font-family: "Oswald", sans-serif;
+}
+.font-poppins {
+  font-family: "Poppins", sans-serif;
+}
+.font-anton {
+  font-family: "Anton", sans-serif;
 }
