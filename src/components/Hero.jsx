@@ -4,16 +4,16 @@ import bg from "../assets/bg3.jpg";
 const Hero = () => {
   return (
     <div
-      className="text-white h-screen w-full bg-cover bg-no-repeat bg-top "
+      className="text-white h-screen w-full bg-cover bg-no-repeat bg-center "
       style={{ backgroundImage: `url(${bg})` }}
     >
       <div className="container h-full">
         <div className="justify-center items-center flex flex-col text-center">
           <div className="mt-30 space-y-10">
-            <h1 className="uppercase font-poppins tracking-tight text-7xl font-bold  px-5">
+            <h1 className="uppercase font-poppins tracking-tight text-5xl md:text-7xl font-bold  px-5">
               DRIVE INTO THE FUTURE{" "}
             </h1>
-            <h2 className="font-poppins text-lg px-5">
+            <h2 className="hidden sm:block font-poppins text-gray-200 text-lg px-5">
               Experience the perfect blend of power, elegance, and cutting-edge
               technology. Our cars are engineered to deliver unmatched
               performance, sleek design, and ultimate comfort for every journey.
