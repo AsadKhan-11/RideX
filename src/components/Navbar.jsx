@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { CgClose } from "react-icons/cg";
 import { GiHamburgerMenu } from "react-icons/gi";
+import logo from "../assets/logo.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,12 +23,16 @@ const Navbar = () => {
   return (
     <div
       className={`fixed top-0 left-0 text-white w-full z-50 transition-colors duration-300 ${
-        isScrolled ? "bg-black/80 shadow-md" : "bg-transparent"
+        isScrolled ? "bg-black/80 shadow-md backdrop-blur-xs" : "bg-transparent"
       }`}
     >
       <nav className="container py-4 flex items-center justify-between ">
-        <div className=" text-3xl font-bold">
-          <h1> RideX</h1>
+        <div className=" w-32  ">
+          <img
+            src={logo}
+            alt="RideX logo"
+            className="h-full w-full invert brightness-0 "
+          />{" "}
         </div>
         <div className="hidden lg:flex items-center space-x-25">
           <ul className="flex space-x-10 text-lg">
@@ -51,12 +56,8 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="font-semibold hidden lg:block space-x-5 text-lg">
-          <button className="bg-[#121212]  border-2 border-white px-4 py-2 rounded-lg transition-all duration-300 cursor-pointer hover:bg-[#5e5e5e65] ">
-            Login
-          </button>
-          <button className="text-white border-2 border-white px-4 py-2 rounded-lg   transition-all duration-300 cursor-pointer hover:bg-white hover:text-black   ">
-            Signup
-          </button>
+          <button className="btn   ">Login</button>
+          <button className="btn">Signup</button>
         </div>
 
         {/* Mobile view */}
@@ -71,7 +72,7 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="z-50 absolute top-0 left-0 w-full h-screen font-semibold flex space-y-6 flex-col items-center justify-center  bg-black/90 text-white p-8 pb-14 transition-all duration-200">
+          <div className="z-50 absolute top-0 left-0 w-full h-screen font-semibold flex space-y-6 flex-col items-center justify-center  bg-black/95 text-white p-8 pb-14 transition-all duration-200">
             <button
               onClick={() => setIsOpen(false)}
               className="absolute top-6 right-6 text-3xl cursor-pointer transition-colors duration-300"
@@ -92,12 +93,8 @@ const Navbar = () => {
                 <a href="#testimonials"> Testimonials</a>
               </li>
             </ul>{" "}
-            <button className="bg-[#121212]  border-2 border-white px-4 py-2 rounded-lg transition-all duration-300 cursor-pointer hover:bg-[#5e5e5e65] ">
-              Login
-            </button>
-            <button className="text-white border-2 border-white px-4 py-2 rounded-lg   transition-all duration-300 cursor-pointer hover:bg-white hover:text-black   ">
-              Signup
-            </button>
+            <button className="btn   ">Login</button>
+            <button className="btn">Signup</button>
           </div>
         )}
       </nav>

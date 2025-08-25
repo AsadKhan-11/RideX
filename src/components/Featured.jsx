@@ -33,10 +33,10 @@ const cars = [
 
 const Featured = () => {
   return (
-    <section className=" bg-black text-white">
+    <section className="section bg-black text-white">
       <div className="container">
         <div className="text-center mb-12">
-          <h2 className="text-5xl font-bold">Featured Cars</h2>
+          <h2 className="text-5xl uppercase font-bold">Featured Cars</h2>
           <p className="text-gray-200 text-lg mt-2">
             Explore our top picks, hand-selected for performance and style.
           </p>

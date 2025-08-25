@@ -1,33 +1,33 @@
 import React from "react";
-import bg from "../assets/bg3.jpg";
+import bgVideo from "../assets/bg-video.mp4"; // your video file
 
-const Hero = () => {
+const VideoBackground = () => {
   return (
-    <div
-      className="text-white h-screen w-full bg-cover bg-no-repeat bg-center "
-      style={{ backgroundImage: `url(${bg})` }}
-    >
-      <div className="container h-full">
-        <div className="justify-center items-center flex flex-col text-center">
-          <div className="mt-30 space-y-10">
-            <h1 className="uppercase font-poppins tracking-tight text-5xl md:text-7xl font-bold  px-5">
-              DRIVE INTO THE FUTURE{" "}
-            </h1>
-            <h2 className="hidden sm:block font-poppins text-gray-200 text-lg px-5">
-              Experience the perfect blend of power, elegance, and cutting-edge
-              technology. Our cars are engineered to deliver unmatched
-              performance, sleek design, and ultimate comfort for every journey.
-              Whether you're chasing speed, style, or sophistication, we bring
-              you vehicles that redefine driving.
-            </h2>
-            <button className="font-semibold px-4 py-3  border-2 border-white rounded-lg hover:bg-[#5e5e5e65]  cursor-pointer transition-all duration-300">
-              Explore Now
-            </button>
-          </div>
-        </div>
+    <div className="text-white relative w-full h-screen overflow-hidden">
+      {/* Video Background */}
+      <video
+        className="absolute top-0 left-0 w-full h-full object-cover"
+        src={bgVideo}
+        autoPlay
+        loop
+        muted
+        playsInline
+      />
+
+      {/* Overlay (optional, for dark effect) */}
+      <div className="absolute inset-0 bg-black/40"></div>
+
+      {/* Content on top */}
+      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
+        <h1 className="text-4xl md:text-6xl font-bold mb-6">
+          The Future on Wheels
+        </h1>
+        <button className=" px-6 py-3 border-2 border-transparent bg-white text-black font-semibold rounded-full shadow-lg hover:bg-[#5e5e5e65] hover:border-white hover:text-white cursor-pointer transition-all duration-300">
+          Explore Cars
+        </button>
       </div>
     </div>
   );
 };
 
-export default Hero;
+export default VideoBackground;
