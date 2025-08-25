@@ -4,6 +4,7 @@ import "./App.css";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import Featured from "./components/Featured";
+import Services from "./components/Services";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -13,6 +14,7 @@ function App() {
       <Navbar />
       <Hero />
       <Featured />
+      <Services />
     </div>
   );
 }
