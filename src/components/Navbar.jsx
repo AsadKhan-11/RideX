@@ -26,8 +26,8 @@ const Navbar = () => {
         isScrolled ? "bg-black/80 shadow-md backdrop-blur-xs" : "bg-transparent"
       }`}
     >
-      <nav className="container py-4 flex items-center justify-between ">
-        <div className=" w-32  ">
+      <nav className="container py-2 md:py-4 flex items-center justify-between ">
+        <div className=" w-20 ">
           <img
             src={logo}
             alt="RideX logo"
@@ -40,18 +40,13 @@ const Navbar = () => {
               <a href="#home">Home</a>
             </li>
             <li className="links">
-              <a href="#about">About</a>
+              <a href="#services">Services</a>
             </li>
             <li className="links">
-              <a href="#pricing">Pricing</a>
+              <a href="#featured">Featured</a>
             </li>
             <li className="links">
-              <a href="#testimonials">Testimonials</a>
-            </li>
-            <li className="links">
-              <a href="#contact" className="">
-                Contact
-              </a>
+              <a href="#contact">Contact</a>
             </li>
           </ul>
         </div>
@@ -72,7 +67,7 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="z-50 absolute top-0 left-0 w-full h-screen font-semibold flex space-y-6 flex-col items-center justify-center  bg-black/95 text-white p-8 pb-14 transition-all duration-200">
+          <div className="bg-black/80 shadow-md backdrop-blur-xs z-50 absolute top-0 left-0 w-full h-screen font-semibold flex space-y-6 flex-col items-center justify-center text-white p-8 pb-14 transition-all duration-200">
             <button
               onClick={() => setIsOpen(false)}
               className="absolute top-6 right-6 text-3xl cursor-pointer transition-colors duration-300"
@@ -84,13 +79,13 @@ const Navbar = () => {
                 <a href="#home"> Home </a>
               </li>
               <li className=" transition-all duration-300 cursor-pointer  text-center">
-                <a href="#about"> About Us </a>
+                <a href="#services"> Services </a>
               </li>
               <li className=" transition-all duration-300 cursor-pointer  text-center">
-                <a href="#pricing"> Pricing </a>
+                <a href="#featured"> Featured </a>
               </li>
               <li className="transition-all duration-300 cursor-pointer  text-center">
-                <a href="#testimonials"> Testimonials</a>
+                <a href="#contact"> Contact</a>
               </li>
             </ul>{" "}
             <button className="btn   ">Login</button>

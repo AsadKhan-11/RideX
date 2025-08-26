@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { BiArrowToLeft } from "react-icons/bi";
+import React, { useEffect, useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 const service = [
@@ -52,32 +51,52 @@ const service = [
 
 const Services = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [cardsPerView, setCardsPerView] = useState(3);
 
-  const cardsPerView = 3; // how many cards per page
+  // Update cardsPerView on resize
+  useEffect(() => {
+    const updateCardsPerView = () => {
+      if (window.innerWidth < 640) {
+        setCardsPerView(1); // mobile
+      } else if (window.innerWidth < 1024) {
+        setCardsPerView(2); // tablet
+      } else {
+        setCardsPerView(3); // desktop
+      }
+    };
+
+    updateCardsPerView();
+    window.addEventListener("resize", updateCardsPerView);
+    return () => window.removeEventListener("resize", updateCardsPerView);
+  }, []);
+
   const totalSteps = Math.ceil(service.length / cardsPerView);
 
   const nextSlide = () => {
-    if (currentIndex <= totalSteps) {
-      setCurrentIndex(currentIndex + 3);
+    if (currentIndex < service.length - cardsPerView) {
+      setCurrentIndex(currentIndex + cardsPerView);
     } else {
-      setCurrentIndex(0);
+      setCurrentIndex(0); // loop back
     }
   };
 
   const prevSlide = () => {
     if (currentIndex > 0) {
-      setCurrentIndex(currentIndex - 3);
-    } else if (currentIndex === 0) {
+      setCurrentIndex(currentIndex - cardsPerView);
+    } else {
       setCurrentIndex(
-        service.length % 3 === 0
-          ? service.length - 3
-          : service.length - (service.length % 3)
+        service.length % cardsPerView === 0
+          ? service.length - cardsPerView
+          : service.length - (service.length % cardsPerView)
       );
     }
   };
 
   return (
-    <div className="section max-w-5xl relative mx-auto overflow-hidden">
+    <div
+      className="section max-w-6xl relative mx-auto overflow-hidden"
+      id="services"
+    >
       <div className="container text-white">
         {/* Heading */}
         <div className="text-center mb-12">
@@ -87,28 +106,35 @@ const Services = () => {
           </p>
         </div>
 
-        {/* Arrows */}
-
-        {/* Slider track */}
+        {/* Slider */}
         <div className="overflow-hidden relative">
-          <button className=" arrows left-0" onClick={prevSlide}>
+          <button className="arrows left-0" onClick={prevSlide}>
             <FaArrowLeft size={20} />
           </button>
 
           <button className="arrows right-0" onClick={nextSlide}>
             <FaArrowRight size={20} />
           </button>
+
           <div
-            className="flex transition-transform duration-500 max-w-6xl"
+            className="flex transition-transform duration-500"
             style={{
-              transform: `translateX(-${currentIndex * (100 / totalSteps)}%)`,
+              transform: `translateX(-${
+                (currentIndex / service.length) * 100
+              }%)`,
+              width: `${(service.length / cardsPerView) * 100}%`,
             }}
           >
             {service.map((srv, index) => (
-              <div key={index} className="w-1/3 flex-shrink-0 p-4">
+              <div
+                key={index}
+                className="p-4"
+                style={{ width: `${100 / service.length}%` }}
+              >
                 <div className="rounded-xl text-center shadow-lg p-6 border-2 border-white hover:scale-105 transition-transform duration-300 h-full">
                   <h3 className="text-2xl font-semibold mb-6">{srv.title}</h3>
                   <p className="text-gray-200 text-sm">{srv.subtext}</p>
+                  <button className="sec-btn">Read More</button>
                 </div>
               </div>
             ))}
@@ -118,8 +144,8 @@ const Services = () => {
         {/* Dots */}
         <div className="flex justify-center mt-6 space-x-2">
           {Array.from({ length: totalSteps }).map((_, idx) => {
-            const start = idx * 3; // starting index of this step
-            const end = start + 2; // ending index of this step
+            const start = idx * cardsPerView;
+            const end = start + (cardsPerView - 1);
 
             return (
               <div

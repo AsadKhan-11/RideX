@@ -3,7 +3,10 @@ import bgVideo from "../assets/bg.mp4"; // your video file
 
 const VideoBackground = () => {
   return (
-    <div className="text-white relative w-full h-screen overflow-hidden">
+    <div
+      className="text-white relative w-full h-screen overflow-hidden"
+      id="home"
+    >
       {/* Video Background */}
       <video
         className="absolute top-0 left-0 w-full h-full object-cover"

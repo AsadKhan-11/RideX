@@ -13,8 +13,8 @@ function App() {
     <div className="relative overflow-x-hidden">
       <Navbar />
       <Hero />
-      <Featured />
       <Services />
+      <Featured />
     </div>
   );
 }

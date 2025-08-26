@@ -33,7 +33,7 @@ const cars = [
 
 const Featured = () => {
   return (
-    <section className=" section text-white">
+    <section className=" section text-white" id="featured">
       <div className="container">
         <div className="text-center mb-12">
           <h2 className="text-5xl uppercase font-bold">Featured Cars</h2>
@@ -46,21 +46,19 @@ const Featured = () => {
           {cars.map((car, index) => (
             <div
               key={index}
-              className="bg-[#121212] rounded-xl   shadow-lg p-6 hover:scale-105 transition-transform duration-300"
+              className="bg-transparent border-2 border-white rounded-xl   shadow-lg p-6"
             >
               <div className="rounded-lg mb-4 overflow-hidden h-[250px] object-center object-cover">
                 <img
                   src={car.image}
                   alt={car.name}
-                  className="w-full h-full object-cover object-center"
+                  className="w-full h-full object-cover object-center  hover:scale-105 transition-transform duration-300"
                 />
               </div>
               <h3 className="text-xl font-semibold">{car.name}</h3>
               <p className="text-gray-200 text-sm mt-1">{car.specs}</p>
               <p className="text-red-500 font-bold mt-3">{car.price}</p>
-              <button className="mt-4 px-5 py-2 font-semibold rounded-lg bg-gradient-to-r from-red-500 to-red-700 hover:from-red-600 hover:to-red-800 cursor-pointer transition-all duration-300">
-                View Details
-              </button>
+              <button className="sec-btn ">View Details</button>
             </div>
           ))}
         </div>

@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+html {
+  @apply scroll-smooth;
+}
+
 body {
   @apply bg-black;
 }
@@ -9,19 +13,22 @@ body {
 }
 
 .section {
-  @apply pt-20;
+  @apply py-20;
 }
 
 .btn {
   @apply text-white border-2 border-white px-4 py-2 rounded-lg   transition-all duration-300 cursor-pointer hover:bg-white hover:text-black;
 }
 
+.sec-btn {
+  @apply mt-4 font-semibold text-gray-200 border-2 border-[#999999e5] py-2 px-4 hover:bg-[#999999e5] cursor-pointer transition-all duration-300 hover:text-white rounded-lg;
+}
 .links {
   @apply hover:border-white border-2 border-transparent px-2 py-1 rounded-lg transition-all duration-300 cursor-pointer;
 }
 
 .arrows {
-  @apply cursor-pointer absolute  top-1/2 -translate-y-1/2 bg-white text-black p-2 rounded-full shadow-md z-10 hover:bg-[#e5e5e5e5];
+  @apply cursor-pointer absolute  top-1/2 -translate-y-1/2 bg-white text-black p-2 rounded-full shadow-md z-10 hover:bg-[#e5e5e5e5] transition-all duration-300;
 }
 .font-oswald {
   font-family: "Oswald", sans-serif;
