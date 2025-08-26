@@ -22,17 +22,17 @@ const Navbar = () => {
   }, []);
   return (
     <div
-      className={`fixed top-0 left-0 text-white w-full z-50 transition-colors duration-300 ${
+      className={`fixed top-0 left-0  w-full z-50 transition-colors duration-300 ${
         isScrolled ? "bg-black/80 shadow-md backdrop-blur-xs" : "bg-transparent"
       }`}
     >
       <nav className="container py-2 md:py-4 flex items-center justify-between ">
-        <div className=" w-20 ">
+        <div className=" w-20 lg:w-28 ">
           <img
             src={logo}
             alt="RideX logo"
             className="h-full w-full invert brightness-0 "
-          />{" "}
+          />
         </div>
         <div className="hidden lg:flex items-center space-x-25">
           <ul className="flex space-x-10 text-lg">
@@ -58,7 +58,7 @@ const Navbar = () => {
         {/* Mobile view */}
         <div className="lg:hidden flex items-center">
           <button
-            className="text-white focus:outline-none"
+            className=" focus:outline-none"
             onClick={() => setIsOpen(true)}
           >
             <GiHamburgerMenu className="text-2xl" />
@@ -67,7 +67,7 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="bg-black/80 shadow-md backdrop-blur-xs z-50 absolute top-0 left-0 w-full h-screen font-semibold flex space-y-6 flex-col items-center justify-center text-white p-8 pb-14 transition-all duration-200">
+          <div className="bg-black/80 shadow-md backdrop-blur-xs z-50 absolute top-0 left-0 w-full h-screen font-semibold flex space-y-6 flex-col items-center justify-center p-8 pb-14 transition-all duration-200">
             <button
               onClick={() => setIsOpen(false)}
               className="absolute top-6 right-6 text-3xl cursor-pointer transition-colors duration-300"

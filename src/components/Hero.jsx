@@ -3,10 +3,7 @@ import bgVideo from "../assets/bg.mp4"; // your video file
 
 const VideoBackground = () => {
   return (
-    <div
-      className="text-white relative w-full h-screen overflow-hidden"
-      id="home"
-    >
+    <div className=" relative w-full h-screen overflow-hidden" id="home">
       {/* Video Background */}
       <video
         className="absolute top-0 left-0 w-full h-full object-cover"
@@ -21,7 +18,7 @@ const VideoBackground = () => {
       <div className="absolute inset-0 bg-black/40"></div>
 
       {/* Content on top */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
+      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
         <h1 className="text-4xl md:text-6xl font-bold mb-6">
           The Future on Wheels
         </h1>

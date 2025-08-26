@@ -97,7 +97,7 @@ const Services = () => {
       className="section max-w-6xl relative mx-auto overflow-hidden"
       id="services"
     >
-      <div className="container text-white">
+      <div className="container ">
         {/* Heading */}
         <div className="text-center mb-12">
           <h2 className="text-5xl uppercase font-bold">Our Services</h2>
@@ -150,9 +150,9 @@ const Services = () => {
             return (
               <div
                 key={idx}
-                className={`h-1 w-8 rounded-full ${
+                className={`h-1 w-4 sm:w-8 lg:w-14 rounded-full ${
                   currentIndex >= start && currentIndex <= end
-                    ? "bg-yellow-400"
+                    ? "bg-red-500"
                     : "bg-gray-500"
                 }`}
               ></div>

@@ -33,7 +33,7 @@ const cars = [
 
 const Featured = () => {
   return (
-    <section className=" section text-white" id="featured">
+    <section className=" section" id="featured">
       <div className="container">
         <div className="text-center mb-12">
           <h2 className="text-5xl uppercase font-bold">Featured Cars</h2>
