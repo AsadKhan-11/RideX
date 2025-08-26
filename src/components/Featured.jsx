@@ -42,23 +42,25 @@ const Featured = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))]  gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] md:grid-cols-[repeat(auto-fill,minmax(300px,1fr))]   gap-8 max-w-6xl mx-auto">
           {cars.map((car, index) => (
             <div
               key={index}
-              className="bg-transparent border-2 border-white rounded-xl   shadow-lg p-6"
+              className="bg-transparent border-2 border-white rounded-xl  shadow-lg "
             >
-              <div className="rounded-lg mb-4 overflow-hidden h-[250px] object-center object-cover">
+              <div className="rounded-t-lg mb-4 overflow-hidden h-[250px] object-center object-cover">
                 <img
                   src={car.image}
                   alt={car.name}
                   className="w-full h-full object-cover object-center  hover:scale-105 transition-transform duration-300"
                 />
               </div>
-              <h3 className="text-xl font-semibold">{car.name}</h3>
-              <p className="text-gray-200 text-sm mt-1">{car.specs}</p>
-              <p className="text-red-500 font-bold mt-3">{car.price}</p>
-              <button className="sec-btn ">View Details</button>
+              <div className="p-4 ">
+                <h3 className="text-xl font-semibold">{car.name}</h3>
+                <p className="text-gray-200 text-sm mt-1">{car.specs}</p>
+                <p className="text-red-500 font-bold mt-3">{car.price}</p>
+                <button className="sec-btn ">View Details</button>
+              </div>
             </div>
           ))}
         </div>

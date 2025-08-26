@@ -19,7 +19,7 @@ const VideoBackground = () => {
 
       {/* Content on top */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
-        <h1 className="text-4xl md:text-6xl font-bold mb-6">
+        <h1 className="text-6xl md:text-6xl font-bold mb-6 ">
           The Future on Wheels
         </h1>
         <button className=" px-6 py-3 border-2 border-transparent bg-white text-black font-semibold rounded-full shadow-lg hover:bg-[#5e5e5e65] hover:border-white hover:text-white cursor-pointer transition-all duration-300">

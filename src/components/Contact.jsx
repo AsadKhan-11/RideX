@@ -12,18 +12,28 @@ const Contact = () => {
             always excited to connect!
           </p>
         </div>
-        <div className="max-w-[350px] mx-auto bg-transparent border-2 border-white rounded-2xl p-6 space-y-4">
-          <div className="contact-container">
-            <label className="contact-label">Name</label>
-            <input
-              required
-              type="text"
-              placeholder="Your full name"
-              className="contact-input"
-            />
+        <div className="max-w-[550px] mx-auto bg-transparent border-2 border-white rounded-2xl p-6 space-y-4">
+          <div className="flex justify-between gap-4 flex-col sm:flex-row">
+            <div className="contact-container ">
+              <label className="contact-label">First Name*</label>
+              <input
+                required
+                type="text"
+                placeholder="Enter First Name"
+                className="contact-input"
+              />
+            </div>
+            <div className="contact-container ">
+              <label className="contact-label">Last Name</label>
+              <input
+                type="text"
+                placeholder="Enter Last Name"
+                className="contact-input"
+              />
+            </div>
           </div>
           <div className="contact-container">
-            <label className="contact-label">Email</label>
+            <label className="contact-label">Email*</label>
             <input
               required
               type="email"
@@ -32,7 +42,7 @@ const Contact = () => {
             />
           </div>
           <div className="contact-container">
-            <label className="contact-label">Phone</label>
+            <label className="contact-label">Phone*</label>
             <input
               type="tel"
               id="phone"
@@ -51,7 +61,7 @@ const Contact = () => {
               rows={4}
             />
           </div>
-          <button className="btn px-4 py-4">
+          <button className="btn  ">
             <div className="flex items-center gap-2">
               <IoIosSend /> Send Message
             </div>
