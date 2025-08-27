@@ -9,7 +9,7 @@ body {
 }
 
 .container {
-  @apply mx-auto px-2 lg:px-4;
+  @apply mx-auto px-4;
 }
 
 .section {
@@ -40,6 +40,9 @@ body {
 }
 .contact-input {
   @apply h-10 w-full bg-transparent border-2 border-white px-4 rounded-lg focus:outline-none;
+}
+.footer-icon {
+  @apply hover:text-[#999999e5] cursor-pointer transition-all duration-300;
 }
 
 .font-oswald {

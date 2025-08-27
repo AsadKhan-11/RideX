@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar";
 import Featured from "./components/Featured";
 import Services from "./components/Services";
 import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -17,6 +18,7 @@ function App() {
       <Services />
       <Featured />
       <Contact />
+      <Footer />
     </div>
   );
 }
