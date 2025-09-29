@@ -1,6 +1,6 @@
 # <h1 align="center">RideX</h1>
 
-<!-- ![RideX](https://github.com/user-attachments/assets/ec4ce66c-9a89-47a2-86c2-0989a64bbfcc) -->
+![RideX](https://github.com/AsadKhan-11/RideX/blob/3b26480cd2f43549e3b707ce5b925486794a663b/src/assets/Hero.png)
 
 ## Technologies
 
